@@ -1,0 +1,42 @@
+{
+    "name": "ovidijus/ketvirta_uzd",
+    "description": "Window maker",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "KetvirtaUzd\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "OvidijusRapalis",
+            "email": "orapalis@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.8",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "scripts": {
+        "phpcs": "./vendor/bin/phpcs --standard=phpcs.xml.dist",
+        "phpunit": "./vendor/bin/phpunit -c ./phpunit.xml.dist",
+        "phpstan": "./vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=2G",
+        "fix": "./vendor/bin/phpcbf",
+        "all": [
+            "@phpunit",
+            "@phpstan",
+            "@phpcs"
+        ]
+    }
+}
